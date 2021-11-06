@@ -29,48 +29,68 @@ export default {}
   margin-right: auto;
   text-align: center;
   max-width: 1060px;
-  /* background-color: rgb(0, 0, 0); */
   width: 40%;
   height: 100%;
 }
 
 .info-card {
-  animation: rigth-to-left 21s linear infinite;
+  animation: rigth-to-left 18s linear infinite;
 }
 
 .info-card.card-2{
   top: -300px;
-  animation-delay: 7s;
+  animation-delay: 6s;
 }
 
 .info-card.card-3{
   top: -750px;
-  animation-delay: 14s;
+  animation-delay: 12s;
 }
 
 @keyframes rigth-to-left {
   0% {
-    transform: scale(100%);
+    transform: translateX(0) scale(100%);
     z-index: 4;
   }
 
+  6.25% {
+    transform: translateX(5%) scale(105%);
+  }
+
   12.5% {
-    transform: translateX(27%) scale(109%);
+    transform: translateX(15%) scale(110%);
+    z-index: 6;
+  }
+
+  18.75% {
+    transform: translateX(30%) scale(115%);
     z-index: 6;
   }
 
   25% {
-    transform: translateX(50%) scale(115%);
+    transform: translateX(50%) scale(120%);
+  }
+
+  31.25% {
+    transform: translateX(70%) scale(116%);
   }
 
   37.5% {
-    transform: translateX(73%) scale(109%);
+    transform: translateX(85%) scale(113%);
     z-index: 5;
+  }
+
+  43.75% {
+    transform: translateX(90%) scale(109%);
   }
 
   50% {
     transform: translateX(100%) scale(100%);
     z-index: 3;
+  }
+
+  56.25% {
+    transform: translateX(90%) scale(95%);
   }
 
   75% {
