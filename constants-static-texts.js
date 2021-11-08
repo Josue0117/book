@@ -1,0 +1,5 @@
+export const ABOUT_ME_TITLE = 'Acerca de mi'
+export const ABOUT_ME_CONTENT = 'Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que no se que no se que no se que no se que.'
+export const VISION_TITLE = 'Vision'
+export const VISION_CONTENT = 'Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que no se que no se que no se que no se que.'
+export const DOWNLOAD_BUTTON_TEXT = 'Descargar CV'

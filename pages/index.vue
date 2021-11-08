@@ -2,7 +2,7 @@
   <div>
     <div class="container-cards-roulete">
       <div class="cards-roulete">
-        <InfoCard class="info-card card-1" />
+        <InfoCard class="info-card card-1" :image-url="require('@/assets/images/hero-image.png')"/>
         <InfoCard class="info-card card-2" />
         <InfoCard class="info-card card-3"/>
       </div>
@@ -35,6 +35,8 @@ export default {}
 
 .info-card {
   animation: rigth-to-left 18s linear infinite;
+  background: white;
+  margin: 0;
 }
 
 .info-card.card-2{
@@ -81,7 +83,7 @@ export default {}
   }
 
   43.75% {
-    transform: translateX(90%) scale(109%);
+    transform: translateX(95%) scale(109%);
   }
 
   50% {
