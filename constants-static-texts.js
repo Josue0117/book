@@ -18,3 +18,19 @@ export const TITLE_CARD_3 = 'Proyect'
 export const PANDEMIC_SIMULATOR_TITLE = 'Pandemic Simulator'
 export const PANDEMIC_SIMULATOR_DESCRIPTION = 'Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que no se que no se que no se que no se que. Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que no se que no se que no se que no se que.'
 export const FRAMEWORKS_TITLE = 'Frameworks'
+
+// FOOTER
+export const CONTACT_BLOCK_VALUES = {
+  mails: {
+    title: 'Correos',
+    values: ['josuehr000@gmail.com','josue.h.r@outlook.com']
+  }, 
+  thelephones: {
+    title: 'Telefonos',
+    values: ['josuehr000@gmail.com','josue.h.r@outlook.com']
+  }, 
+  githubBook: {
+    title: 'GitHub / Book',
+    values: ['josuehr000@gmail.com','josue.h.r@outlook.com']
+  }
+}

@@ -8,14 +8,12 @@
     </div>
     <div class="contact">
       <div class="row">
-        <div class="col-3">
-          <FooterBlock title="Correos" :values="['josuehr000@gmail.com','josue.h.r@outlook.com']" />
-        </div>
-        <div class="col-3">
-          <FooterBlock title="Telefonos" :values="['josuehr000@gmail.com','josue.h.r@outlook.com']" />
-        </div>
-        <div class="col-3">
-          <FooterBlock title="GitHub / Book" :values="['josuehr000@gmail.com','josue.h.r@outlook.com']" />
+        <div 
+          class="col-3"
+          v-for="contact in contactBlocksValues"
+          v-bind:key="contact.title"
+        >
+          <FooterBlock :title="contact.title" :values="contact.values" />
         </div>
       </div>
     </div>
@@ -23,12 +21,17 @@
 </template>
 
 <script>
-import { CARD_1_TITLE, CARD_1_SUBTITLE } from '@/constants-static-texts.js'
+import {
+  CARD_1_TITLE,
+  CARD_1_SUBTITLE,
+  CONTACT_BLOCK_VALUES
+} from '@/constants-static-texts.js'
 export default {
   data: () => {
     return {
       navBarTitle: CARD_1_TITLE.toUpperCase(),
       navBarSubtitle: CARD_1_SUBTITLE.toUpperCase(),
+      contactBlocksValues: CONTACT_BLOCK_VALUES
     }
   }
 }
