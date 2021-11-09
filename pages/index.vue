@@ -2,16 +2,45 @@
   <div>
     <div class="container-cards-roulete">
       <div class="cards-roulete">
-        <InfoCard class="info-card card-1" :image-url="require('@/assets/images/hero-image.png')"/>
-        <InfoCard class="info-card card-2" />
-        <InfoCard class="info-card card-3"/>
+        <InfoCard 
+          class="info-card card-1" 
+          :header-image-url="require('@/assets/images/hero-image.png')"
+          :title="titleCard1"
+          :subtitle="subtitleCard1"
+          :cardNumber="1"
+        />
+        <InfoCard 
+          class="info-card card-2" 
+          :title="titleCard2"
+          :cardNumber="2"
+        />
+        <!-- <InfoCard 
+          class="info-card card-3" 
+          :title="titleCard3"
+          :cardNumber="3"
+        /> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import {
+  CARD_1_TITLE,
+  CARD_1_SUBTITLE,
+  TITLE_CARD_2,
+  TITLE_CARD_3
+} from '@/constants-static-texts.js'
+export default {
+  data: () => {
+    return {
+      titleCard1: CARD_1_TITLE,
+      subtitleCard1: CARD_1_SUBTITLE,
+      titleCard2: TITLE_CARD_2,
+      titleCard3: TITLE_CARD_3
+    }
+  } 
+}
 </script>
 
 <style>
@@ -65,25 +94,25 @@ export default {}
   }
 
   18.75% {
-    transform: translateX(30%) scale(115%);
+    transform: translateX(30%) scale(113%);
     z-index: 6;
   }
 
   25% {
-    transform: translateX(50%) scale(120%);
+    transform: translateX(50%) scale(116%);
   }
 
   31.25% {
-    transform: translateX(70%) scale(116%);
+    transform: translateX(70%) scale(113%);
   }
 
   37.5% {
-    transform: translateX(85%) scale(113%);
+    transform: translateX(85%) scale(110%);
     z-index: 5;
   }
 
   43.75% {
-    transform: translateX(95%) scale(109%);
+    transform: translateX(95%) scale(105%);
   }
 
   50% {
