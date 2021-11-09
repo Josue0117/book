@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="contact">
-      Correos
+      <FooterBlock title="Correos" :values="['josuehr000@gmail.com','josue.h.r@outlook.com']" />
     </div>
   </footer>
 </template>
@@ -54,5 +54,10 @@ p.footer-subtitle {
   color: #01A4FF;
   font-size: 12px;
   margin-bottom: 0;
+}
+
+.contact {
+  min-height: 120px;
+  padding: 20px 20px 0 9%;
 }
 </style>
