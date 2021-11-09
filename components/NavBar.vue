@@ -16,9 +16,11 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <NuxtLink class="nav-link" to="/">
-              <div class="link-to-index left"></div>
-              <div class="link-to-index center"></div>
-              <div class="link-to-index rigth"></div>
+              <div class="container-link-to-index">
+                <div class="link-to-index left"></div>
+                <div class="link-to-index center"></div>
+                <div class="link-to-index rigth"></div>
+              </div>
             </NuxtLink>
           </li>
           <li class="nav-item">
@@ -132,8 +134,13 @@ p.navbar-subtitle {
     right: 8%;
   }
 
+  .container-link-to-index {
+    margin-top: 5px;
+  }
+
   .nav-link {
     margin-left: 20px;
+    font-size: 18px;
   }
 
   .link-to-index {
