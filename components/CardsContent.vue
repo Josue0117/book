@@ -30,6 +30,17 @@
         </div>
       </div>
     </div>
+
+    <!-- CARD 3 -->
+    <div class="card-2" v-if="cardNumber == 3">
+      <div class="row">
+        <Paragraph :title="proyectTittle" :content="proyectDescription" />
+      </div>
+      <div class="row proyect-img">
+        <div class="col-2"></div>
+        <img class="col-8" :src="require('@/assets/images/coronavirus-azul.png')" alt="virus-image">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,7 +52,9 @@ import {
   VISION_TITLE,
   VISION_CONTENT,
   DOWNLOAD_BUTTON_TEXT,
-  SUBTITLE_1_CARD_2
+  SUBTITLE_1_CARD_2,
+  PANDEMIC_SIMULATOR_TITLE,
+  PANDEMIC_SIMULATOR_DESCRIPTION
 } from '@/constants-static-texts.js'
 export default {
   props: {
@@ -58,7 +71,9 @@ export default {
       visionContent: VISION_CONTENT,
       buttonText: DOWNLOAD_BUTTON_TEXT,
       programmingLanguages: SUBTITLE_1_CARD_2,
-      programmingLanguagesUrls: PROGRAMMING_LANGUAGUES_URLS
+      programmingLanguagesUrls: PROGRAMMING_LANGUAGUES_URLS,
+      proyectTittle: PANDEMIC_SIMULATOR_TITLE,
+      proyectDescription: PANDEMIC_SIMULATOR_DESCRIPTION
     }
   },
 }
@@ -83,9 +98,13 @@ export default {
   padding-bottom: 0;
 }
 
-.language-icon img{
-  display: table-cell;
+.language-icon img {
   width: 100%;
-  vertical-align: bottom;
+}
+
+.proyect-img img {
+  width: 100%;
+  padding: 10%;
+
 }
 </style>

@@ -14,4 +14,6 @@ export const TITLE_CARD_2 = 'Skills'
 export const SUBTITLE_1_CARD_2 = 'Lenguajes de programación'
 
 // CARD 3
-export const TITLE_CARD_3 = 'Proyects'
+export const TITLE_CARD_3 = 'Proyect'
+export const PANDEMIC_SIMULATOR_TITLE = 'Pandemic Simulator'
+export const PANDEMIC_SIMULATOR_DESCRIPTION = 'Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que no se que no se que no se que no se que. Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que Lorem no se que no se que no se que no se que no se que.'

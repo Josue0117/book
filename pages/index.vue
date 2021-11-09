@@ -14,11 +14,11 @@
           :title="titleCard2"
           :cardNumber="2"
         />
-        <!-- <InfoCard 
+        <InfoCard 
           class="info-card card-3" 
           :title="titleCard3"
           :cardNumber="3"
-        /> -->
+        />
       </div>
     </div>
   </div>
