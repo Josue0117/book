@@ -2,13 +2,15 @@
   <div>
     <div class="container-cards-roulete">
       <div class="cards-roulete">
-        <InfoCard 
-          class="info-card card-1" 
-          :header-image-url="require('@/assets/images/hero-image.png')"
-          :title="titleCard1"
-          :subtitle="subtitleCard1"
-          :cardNumber="1"
-        />
+        <NuxtLink to="about-me">
+          <InfoCard 
+            class="info-card card-1" 
+            :header-image-url="require('@/assets/images/hero-image.png')"
+            :title="titleCard1"
+            :subtitle="subtitleCard1"
+            :cardNumber="1"
+          />
+        </NuxtLink>
         <InfoCard 
           class="info-card card-2" 
           :title="titleCard2"
@@ -76,6 +78,10 @@ export default {
 .info-card.card-3{
   margin-top: -73.8%;
   animation-delay: 12s;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 @keyframes rigth-to-left {
