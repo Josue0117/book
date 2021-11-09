@@ -119,7 +119,7 @@ p.navbar-subtitle {
 @media (min-width: 954px) {
   p.navbar-title {
     font-size: 25px;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
   }
 
