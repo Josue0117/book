@@ -65,6 +65,10 @@ export default {
   background-color: #c4c4c4;
 }
 
+.navbar {
+  padding: 0;
+}
+
 .title {
   margin-left: 8%;
   text-align: center;

@@ -7,7 +7,17 @@
       </div>
     </div>
     <div class="contact">
-      <FooterBlock title="Correos" :values="['josuehr000@gmail.com','josue.h.r@outlook.com']" />
+      <div class="row">
+        <div class="col-3">
+          <FooterBlock title="Correos" :values="['josuehr000@gmail.com','josue.h.r@outlook.com']" />
+        </div>
+        <div class="col-3">
+          <FooterBlock title="Telefonos" :values="['josuehr000@gmail.com','josue.h.r@outlook.com']" />
+        </div>
+        <div class="col-3">
+          <FooterBlock title="GitHub / Book" :values="['josuehr000@gmail.com','josue.h.r@outlook.com']" />
+        </div>
+      </div>
     </div>
   </footer>
 </template>
@@ -34,7 +44,7 @@ footer {
 }
 
 .title {
-  padding: 25px;
+  padding: 20px;
   text-align: left;
   background: linear-gradient(180deg, #00071F 0%, #000000 100%);
 }

@@ -23,6 +23,11 @@ export default {
 </script>
 
 <style scoped>
+.content {
+  position: absolute;
+  display: block;
+}
+
 p {
   margin-bottom: 0;
 }
