@@ -20,7 +20,7 @@
       <div class="row">
         <Paragraph :title="programmingLanguages" />
       </div>
-      <div class="row">
+      <div class="row languages-container">
         <div
           class="col-4 language-icon"
           v-bind:key="languagueUrl"
@@ -28,6 +28,9 @@
         >
           <img :src="require('@/assets/images/'+languagueUrl+'.png')" :alt="languagueUrl+'-logo'">
         </div>
+      </div>
+      <div class="row">
+        <Paragraph title="Frameworks" />
       </div>
     </div>
 
@@ -53,6 +56,7 @@ import {
   VISION_CONTENT,
   DOWNLOAD_BUTTON_TEXT,
   SUBTITLE_1_CARD_2,
+  FRAMEWORKS_TITLE,
   PANDEMIC_SIMULATOR_TITLE,
   PANDEMIC_SIMULATOR_DESCRIPTION
 } from '@/constants-static-texts.js'
@@ -72,6 +76,7 @@ export default {
       buttonText: DOWNLOAD_BUTTON_TEXT,
       programmingLanguages: SUBTITLE_1_CARD_2,
       programmingLanguagesUrls: PROGRAMMING_LANGUAGUES_URLS,
+      frameworksTitle: FRAMEWORKS_TITLE,
       proyectTittle: PANDEMIC_SIMULATOR_TITLE,
       proyectDescription: PANDEMIC_SIMULATOR_DESCRIPTION
     }
@@ -92,19 +97,18 @@ export default {
   border: none;
 }
 
-.language-icon {
-  margin-top: 10px;
-  padding: 20px;
+.languages-container {
+  padding: 10%;
   padding-bottom: 0;
 }
 
 .language-icon img {
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .proyect-img img {
   width: 100%;
   padding: 10%;
-
 }
 </style>

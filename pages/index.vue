@@ -69,12 +69,12 @@ export default {
 }
 
 .info-card.card-2{
-  top: -300px;
+  margin-top: -73.8%;
   animation-delay: 6s;
 }
 
 .info-card.card-3{
-  top: -750px;
+  margin-top: -73.8%;
   animation-delay: 12s;
 }
 

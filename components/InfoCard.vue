@@ -55,7 +55,11 @@ export default {
   width: 50%;
   height: 450px;
   top: 150px;
-  border: 0.5px solid #e4e4e4;
+  box-shadow: 0 0 15px #938e7e;
+}
+
+.container:hover {
+  box-shadow: 0 0 15px #01A4FF;
 }
 
 .header {
