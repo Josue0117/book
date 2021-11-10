@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 .content {
-  position: absolute;
+  position: inherit;
   display: block;
 }
 

@@ -40,9 +40,9 @@ export default {
 <style scoped>
 footer {
   position: absolute;
-  bottom: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   background-color: #00071F;
 }
 
@@ -70,7 +70,8 @@ p.footer-subtitle {
 }
 
 .contact {
-  min-height: 120px;
-  padding: 20px 20px 0 9%;
+  position: relative;
+  bottom: 0;
+  padding: 20px 20px 20px 9%;
 }
 </style>
