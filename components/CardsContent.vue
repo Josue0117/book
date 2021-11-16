@@ -112,3 +112,4 @@ export default {
   padding: 10%;
 }
 </style>
+
