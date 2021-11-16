@@ -51,15 +51,17 @@ export default {
 
 <style scoped>
 .container {
-  position: relative;
-  width: 50%;
+  position: absolute;
+  width: 300px;
   height: 450px;
   top: 150px;
   box-shadow: 0 0 15px #938e7e;
+  background: white;
+
 }
 
 .container:hover {
-  box-shadow: 0 0 15px #01A4FF;
+  box-shadow: 0 0 25px #a8e0ff;
 }
 
 .header {
@@ -74,6 +76,7 @@ export default {
   position: relative;
   width:100%;
   padding-top: 10%;
+  padding: 0;
 }
 
 .title {

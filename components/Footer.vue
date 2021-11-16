@@ -8,12 +8,28 @@
     </div>
     <div class="contact">
       <div class="row">
-        <div 
+        <div
           class="col-3"
           v-for="contact in contactBlocksValues"
           v-bind:key="contact.title"
         >
           <FooterBlock :title="contact.title" :values="contact.values" />
+        </div>
+        <div class="col-3"></div>
+        <div class="col-3">
+          <div class="row media-links">
+            <div class="col-4"></div>
+            <div
+              class="col-2"
+              v-for="mediaLink in mediaLinks"
+              v-bind:key="mediaLink"
+            >
+              <FooterLink
+                :image-src="mediaLink.imageSrc"
+                :link="mediaLink.link"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -22,34 +38,36 @@
 
 <script>
 import {
-  CARD_1_TITLE,
+  TITLE_CARD_1,
   CARD_1_SUBTITLE,
-  CONTACT_BLOCK_VALUES
+  CONTACT_BLOCK_VALUES,
+  MEDIA_LINKS,
 } from '@/constants-static-texts.js'
 export default {
   data: () => {
     return {
-      navBarTitle: CARD_1_TITLE.toUpperCase(),
+      navBarTitle: TITLE_CARD_1.toUpperCase(),
       navBarSubtitle: CARD_1_SUBTITLE.toUpperCase(),
-      contactBlocksValues: CONTACT_BLOCK_VALUES
+      contactBlocksValues: CONTACT_BLOCK_VALUES,
+      mediaLinks: MEDIA_LINKS,
     }
-  }
+  },
 }
 </script>
 
 <style scoped>
 footer {
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
-  bottom: 0;
-  background-color: #00071F;
+  background-color: #00071f;
+  min-height: 200px;
 }
 
 .title {
   padding: 20px;
   text-align: left;
-  background: linear-gradient(180deg, #00071F 0%, #000000 100%);
+  background: linear-gradient(180deg, #00071f 0%, #000000 100%);
 }
 
 .title div {
@@ -64,7 +82,7 @@ p.footer-title {
 }
 
 p.footer-subtitle {
-  color: #01A4FF;
+  color: #01a4ff;
   font-size: 12px;
   margin-bottom: 0;
 }
@@ -73,5 +91,9 @@ p.footer-subtitle {
   position: relative;
   bottom: 0;
   padding: 20px 20px 20px 9%;
+}
+
+.media-links {
+  text-align: right;
 }
 </style>

@@ -1,8 +1,48 @@
 <template>
-  <div class="content">
-    <div class="paragraph-title">{{ title }}</div>
+  <div :class="'content ' + context">
+    <div class="paragraph-title">
+      <span>{{ title }}</span>
+    </div>
     <div class="line"></div>
-    <div class="paragraph-content">{{ content }}</div>
+    <div v-if="content != ''" class="paragraph-content">
+      <span>{{ content }}</span>
+    </div>
+    <div
+      v-else
+      class="paragraph-content"
+      v-for="paragraph in contentMultiParagraph"
+      v-bind:key="paragraph"
+    >
+      <span v-if="paragraph.hasOwnProperty('normal')">{{ paragraph.normal }}</span>
+      <span v-else-if="context != 'dynamic'" class="strong-text">{{ paragraph.strong }}</span>
+    </div>
+    <div class="row">
+      <div
+        class="paragraph-images col-4"
+        v-for="skill in skillsList"
+        v-bind:key="skill"
+      >
+        <img
+          v-if="skill.src != ''"
+          :src="require('@/assets/images/' + skill.src + '.png')"
+          :alt="skill.name + '-image'"
+        />
+        <div v-else class="skill-without-logo">
+          <p>
+            {{ skill.name }}
+          </p>
+        </div>
+        <p
+          v-if="skill.isASalesforceSkill"
+          :class="'salesforce-skill ' + skill.domain"
+        >
+          Salesforce
+        </p>
+        <p v-else :class="'common-skill ' + skill.domain">
+          {{ skill.name }}
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,39 +51,80 @@ export default {
   props: {
     title: {
       type: String,
-      default: '',
-    },
-    title: {
-      type: String,
       default: ''
+    },
+    skillsList: {
+      type: Object,
+      default: {}
     },
     content: {
       type: String,
       default: ''
+    },
+    context: {
+      type: String,
+      default: ''
+    },
+    contentMultiParagraph: {
+      type: Array,
+      default: []
     }
   },
+  data: () => {
+    return {
+      hover: false,
+    }
+  },
+  computed: {
+    typeOfData: function (content) {
+      return typeof(content) 
+    }
+  }
 }
 </script>
 
 <style scoped>
+.static-page .paragraph-title span {
+  font-size: 30px;
+}
+
+.static-page .paragraph-content span {
+  font-size: 18px;
+  color: #aa9f9f;
+}
+
 .content {
-  text-align: left;
-  padding: 10%;
+  text-align: justify;
+  padding: 5%;
   padding-bottom: 0;
 }
 
 .paragraph-title {
-  color: #6B6666;
+  color: #6b6666;
 }
 
 .paragraph-content {
   font-size: 12px;
-  color: #6B6666;
+  color: #6b6666;
+}
+
+.static-page .paragraph-content span.strong-text {
+  color: #01a4ff;
+  font-weight: bolder;
 }
 
 .line {
   width: 100%;
   height: 2px;
-  background-color: #01A4FF;
+  background-color: #01a4ff;
+}
+
+.paragraph-images {
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  padding: 15%;
 }
 </style>

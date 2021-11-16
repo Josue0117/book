@@ -1,18 +1,76 @@
 <template>
-  <div class="content">
-    <NavBar />
-    <div class="row">
-      <div class="col-4 hero-image">
-        <img :src="require('@/assets/images/hero-image.png')" alt="hero-image">
+  <div class="about-me-container">
+    <div class="page-content">
+      <NavBar :title="navBarTitle" :subtitle="navBarSubtitle" />
+      <div class="row">
+        <div class="col-4 hero-image">
+          <img
+            :src="require('@/assets/images/hero-image.png')"
+            alt="hero-image"
+          />
+        </div>
+        <div class="col-8">
+          <div class="row">
+            <div class="col-12">
+              <Paragraph
+                :title="aboutMeTitle"
+                :content-multi-paragraph="aboutMeContent"
+                context="static-page"
+              />
+            </div>
+            <div class="col-12">
+              <a href="/CV.pdf" download="">
+                <button class="red-button">
+                  {{ buttonText }}
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row"></div>
       </div>
+      <div class="push"></div>
     </div>
     <Footer />
   </div>
 </template>
 
+<script>
+import {
+  TITLE_CARD_1,
+  CARD_1_SUBTITLE,
+  ABOUT_ME_TITLE,
+  ABOUT_ME_CONTENT,
+  DOWNLOAD_BUTTON_TEXT,
+} from '@/constants-static-texts.js'
+export default {
+  data: () => {
+    return {
+      navBarTitle: TITLE_CARD_1,
+      navBarSubtitle: CARD_1_SUBTITLE,
+      aboutMeTitle: ABOUT_ME_TITLE,
+      aboutMeContent: ABOUT_ME_CONTENT,
+      buttonText: DOWNLOAD_BUTTON_TEXT,
+    }
+  },
+}
+</script>
+
 <style scoped>
-.content {
+.about-me-container {
+  position: absolute;
   height: 100%;
+  margin: 0;
+}
+
+.page-content {
+  min-height: 100%;
+  margin-bottom: -200px;
+}
+
+Footer,
+.push {
+  height: 220px;
 }
 
 .row {
@@ -22,9 +80,25 @@
 
 .hero-image img {
   border-radius: 50%;
-box-shadow: 0 0 15px #938e7e;
+  box-shadow: 0 0 15px #938e7e;
   margin-top: 15%;
   margin-left: 25%;
   width: 70%;
+}
+
+button.red-button {
+  margin: 5% 0% 5% 30%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  width: 40%;
+  font-size: 14px;
+  background-color: #7e0000;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+button.red-button:hover {
+  background-color: #b90101;
 }
 </style>

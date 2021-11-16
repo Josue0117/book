@@ -2,8 +2,9 @@
   <div class="content">
     <nav class="navbar navbar-expand-lg">
       <div class="title">
-        <p class="navbar-title">{{ navBarTitle }}</p>
-        <p class="navbar-subtitle">{{ navBarSubtitle }}</p>
+        <p v-if="title != aboutOptionText" class="navbar-title" id="background">{{ title }}</p>
+        <p v-else class="navbar-title">{{ title }}</p>
+        <p class="navbar-subtitle">{{ subtitle }}</p>
       </div>
       <button class="navbar-toggler" @click="showMenu">
         <span class="navbar-toggler-icon"></span>
@@ -24,13 +25,28 @@
             </NuxtLink>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="#">Skills</NuxtLink>
+            <div v-bind:class="{selected: (title === skillOptionText)}">
+              <NuxtLink 
+                class="nav-link" 
+                to="skills"
+              >{{ skillOptionText }}</NuxtLink>
+            </div>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="#">Acerca de mi</NuxtLink>
+            <div v-bind:class="{selected: (title === aboutOptionText)}">
+              <NuxtLink 
+                class="nav-link" 
+                to="about-me"
+              >Acerca de mi</NuxtLink>
+            </div>
           </li>
           <li class="nav-item">
-            <NuxtLink class="nav-link" to="#">Proyecto</NuxtLink>
+            <div v-bind:class="{selected: (title === proyectsOptionText)}">
+              <NuxtLink 
+                class="nav-link" 
+                to="proyects"
+              >{{ proyectsOptionText }}</NuxtLink>
+            </div>
           </li>
         </ul>
       </div>
@@ -39,12 +55,27 @@
 </template>
 
 <script>
-import { CARD_1_TITLE, CARD_1_SUBTITLE } from '@/constants-static-texts.js'
+import { 
+  TITLE_CARD_1,
+  TITLE_CARD_2,
+  TITLE_CARD_3,
+} from '@/constants-static-texts.js'
 export default {
+  props: {
+    title: {
+      type: String,
+      default:''
+    },
+    subtitle: {
+      type: String,
+      default:''
+    }
+  },
   data: () => {
     return {
-      navBarTitle: CARD_1_TITLE,
-      navBarSubtitle: CARD_1_SUBTITLE,
+      skillOptionText: TITLE_CARD_2,
+      aboutOptionText: TITLE_CARD_1,
+      proyectsOptionText: TITLE_CARD_3,
     }
   },
   methods: {
@@ -69,9 +100,19 @@ export default {
   padding: 0;
 }
 
+div.selected a {
+  color: white;
+}
+
 .title {
-  margin-left: 8%;
+  margin: 5px 0 20px 8%;
   text-align: center;
+}
+
+#background {
+  background-color: white;
+  padding: 0px 25px 0px 25px;
+  color: #6B6666;
 }
 
 p.navbar-title {
@@ -81,14 +122,17 @@ p.navbar-title {
 }
 
 p.navbar-subtitle {
+  position: absolute;
   color: #01A4FF;
 }
 
-.nav-link {
+.nav-item a {
   color: #6B6666;
+  margin-left: 20px;
+  font-size: 18px;
 }
 
-.nav-link:hover {
+.nav-item a:hover {
   color:white;
 }
 
@@ -140,11 +184,6 @@ p.navbar-subtitle {
 
   .container-link-to-index {
     margin-top: 5px;
-  }
-
-  .nav-link {
-    margin-left: 20px;
-    font-size: 18px;
   }
 
   .link-to-index {

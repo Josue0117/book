@@ -3,10 +3,11 @@
     <!-- CARD 1 -->
     <div class="card-1" v-if="cardNumber == 1">
       <div class="row">
-        <Paragraph :title="aboutMeTitle" :content="aboutMeContent" />
-      </div>
-      <div class="row">
-        <Paragraph :title="visionTitle" :content="visionContent" />
+        <Paragraph
+          :title="aboutMeTitle"
+          :content-multi-paragraph="aboutMeContent"
+          context="dynamic"
+        />
       </div>
       <div class="row">
         <button class="red-button">
@@ -17,31 +18,29 @@
 
     <!-- CARD 2 -->
     <div class="card-2" v-if="cardNumber == 2">
-      <div class="row">
-        <Paragraph :title="programmingLanguages" />
-      </div>
-      <div class="row languages-container">
-        <div
-          class="col-4 language-icon"
-          v-bind:key="languagueUrl"
-          v-for="languagueUrl in programmingLanguagesUrls"
-        >
-          <img :src="require('@/assets/images/'+languagueUrl+'.png')" :alt="languagueUrl+'-logo'">
-        </div>
-      </div>
-      <div class="row">
-        <Paragraph title="Frameworks" />
-      </div>
+      <Paragraph
+        :title="languagesSection.title"
+        :skills-list="languagesSection.values"
+        context="dynamic"
+      />
     </div>
 
     <!-- CARD 3 -->
     <div class="card-2" v-if="cardNumber == 3">
       <div class="row">
-        <Paragraph :title="proyectTittle" :content="proyectDescription" />
+        <Paragraph
+          :title="proyectTittle"
+          :content="proyectDescription"
+          context="dynamic"
+        />
       </div>
       <div class="row proyect-img">
         <div class="col-2"></div>
-        <img class="col-8" :src="require('@/assets/images/coronavirus-azul.png')" alt="virus-image">
+        <img
+          class="col-8"
+          :src="require('@/assets/images/coronavirus-azul.png')"
+          alt="virus-image"
+        />
       </div>
     </div>
   </div>
@@ -52,13 +51,10 @@ import { PROGRAMMING_LANGUAGUES_URLS } from '@/constants-urls.js'
 import {
   ABOUT_ME_TITLE,
   ABOUT_ME_CONTENT,
-  VISION_TITLE,
-  VISION_CONTENT,
   DOWNLOAD_BUTTON_TEXT,
-  SUBTITLE_1_CARD_2,
-  FRAMEWORKS_TITLE,
+  LANGUAGES_SECTION,
   PANDEMIC_SIMULATOR_TITLE,
-  PANDEMIC_SIMULATOR_DESCRIPTION
+  PANDEMIC_SIMULATOR_CONTENT,
 } from '@/constants-static-texts.js'
 export default {
   props: {
@@ -71,14 +67,11 @@ export default {
     return {
       aboutMeTitle: ABOUT_ME_TITLE,
       aboutMeContent: ABOUT_ME_CONTENT,
-      visionTitle: VISION_TITLE,
-      visionContent: VISION_CONTENT,
       buttonText: DOWNLOAD_BUTTON_TEXT,
-      programmingLanguages: SUBTITLE_1_CARD_2,
+      languagesSection: LANGUAGES_SECTION,
       programmingLanguagesUrls: PROGRAMMING_LANGUAGUES_URLS,
-      frameworksTitle: FRAMEWORKS_TITLE,
       proyectTittle: PANDEMIC_SIMULATOR_TITLE,
-      proyectDescription: PANDEMIC_SIMULATOR_DESCRIPTION
+      proyectDescription: PANDEMIC_SIMULATOR_CONTENT,
     }
   },
 }
@@ -86,8 +79,7 @@ export default {
 
 <style scoped>
 .red-button {
-  margin: 10%;
-  padding-top: 6px;
+  margin: -0.5% 5% 5% 5%;
   padding-bottom: 6px;
   width: 100%;
   font-size: 14px;
@@ -112,4 +104,3 @@ export default {
   padding: 10%;
 }
 </style>
-
